@@ -58,7 +58,7 @@ To use the theme with [bufferline.nvim](https://github.com/akinsho/bufferline.nv
 
 ```lua
 require('bufferline').setup({
-    highlights = require('my-theme').bufferline.highlights(),
+    highlights = require('my-theme').bufferline.highlights,
 })
 ```
 
