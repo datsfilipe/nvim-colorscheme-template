@@ -1,44 +1,64 @@
-local colors = require("my-theme.colors")
-local config = require("my-theme.config")
+local colorscheme = require 'my-theme.colorscheme'
+local config = require 'my-theme.config'
 local theme = {}
 
-local bg = config.transparent and "NONE" or colors.bg
+local bg = config.transparent and 'NONE' or colorscheme.editorBackground
 
 theme.normal = {
-	a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
-	c = { bg = bg, fg = colors.bg },
+  a = { bg = colorscheme.blue, fg = colorscheme.editorBackground, gui = 'bold' },
+  b = { bg = bg, fg = colorscheme.commentText },
+  c = { bg = bg, fg = colorscheme.editorBackground },
 }
 
 theme.insert = {
-	a = { bg = colors.red, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
+  a = {
+    bg = colorscheme.syntaxError,
+    fg = colorscheme.editorBackground,
+    gui = 'bold',
+  },
+  b = { bg = bg, fg = colorscheme.commentText },
 }
 
 theme.terminal = {
-	a = { bg = colors.green, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
+  a = {
+    bg = colorscheme.successText,
+    fg = colorscheme.editorBackground,
+    gui = 'bold',
+  },
+  b = { bg = bg, fg = colorscheme.commentText },
 }
 
 theme.command = {
-	a = { bg = colors.green, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
+  a = {
+    bg = colorscheme.successText,
+    fg = colorscheme.editorBackground,
+    gui = 'bold',
+  },
+  b = { bg = bg, fg = colorscheme.commentText },
 }
 
 theme.visual = {
-	a = { bg = colors.purple, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
+  a = {
+    bg = colorscheme.syntaxKeyword,
+    fg = colorscheme.editorBackground,
+    gui = 'bold',
+  },
+  b = { bg = bg, fg = colorscheme.commentText },
 }
 
 theme.replace = {
-	a = { bg = colors.orange, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
+  a = {
+    bg = colorscheme.warningText,
+    fg = colorscheme.editorBackground,
+    gui = 'bold',
+  },
+  b = { bg = bg, fg = colorscheme.commentText },
 }
 
 theme.inactive = {
-	a = { bg = colors.comment, fg = colors.bg },
-	b = { bg = bg, fg = colors.orange, gui = "bold" },
-	c = { bg = bg, fg = colors.orange },
+  a = { bg = colorscheme.commentText, fg = colorscheme.editorBackground },
+  b = { bg = bg, fg = colorscheme.warningText, gui = 'bold' },
+  c = { bg = bg, fg = colorscheme.warningText },
 }
 
 return theme
